@@ -2,7 +2,7 @@ class PesosController < ApplicationController
   # GET /pesos
   # GET /pesos.json
   def index
-    @pesos = Peso.all
+    @pesos = Peso.order(:peso).all
     pesos = Array.new
     @pesos.each{|p| pesos << p.peso.to_i}
     @pesos_graph = pesos.join ','
