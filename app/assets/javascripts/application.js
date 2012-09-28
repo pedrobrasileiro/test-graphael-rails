@@ -12,6 +12,7 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require twitter/bootstrap
 //= require raphael.js
 //= require g.raphael-min.js 
 //= require g.pie-min.js
