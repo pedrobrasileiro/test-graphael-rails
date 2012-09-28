@@ -1,0 +1,33 @@
+<h1>Listing pesos</h1>
+
+<table>
+  <tr>
+    <th>Peso</th>
+    <th>Date</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @pesos.each do |peso| %>
+  <tr>
+    <td><%= peso.peso %></td>
+    <td><%= peso.date %></td>
+    <td><%= link_to 'Show', peso %></td>
+    <td><%= link_to 'Edit', edit_peso_path(peso) %></td>
+    <td><%= link_to 'Destroy', peso, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<div id='graphics'></div>
+<%= javascript_tag "
+            window.onload = function () {
+              var r = Raphael('graphics', 640, 480);
+                  r.piechart(320, 240, 150, [55, 20, 13, 32, 5, 1, 2, 10]);
+            }
+       " %>
+
+<%= link_to 'New Peso', new_peso_path %>

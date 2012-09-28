@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Peso:</b>
+  <%= @peso.peso %>
+</p>
+
+<p>
+  <b>Date:</b>
+  <%= @peso.date %>
+</p>
+
+
+<%= link_to 'Edit', edit_peso_path(@peso) %> |
+<%= link_to 'Back', pesos_path %>
