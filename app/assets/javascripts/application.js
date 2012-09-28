@@ -12,4 +12,9 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require raphael.js
+//= require g.raphael-min.js 
+//= require g.pie-min.js
+//= require g.bar-min.js
+//= require g.line-min.js
 //= require_tree .

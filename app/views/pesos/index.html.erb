@@ -20,14 +20,23 @@
 <% end %>
 </table>
 
-<br />
-
 <div id='graphics'></div>
-<%= javascript_tag "
-            window.onload = function () {
-              var r = Raphael('graphics', 640, 480);
-                  r.piechart(320, 240, 150, [55, 20, 13, 32, 5, 1, 2, 10]);
-            }
-       " %>
-
+<script type="text/javascript">
+    window.onload = function () {
+      var r = Raphael('graphics'), 
+      fin = function () {
+                        this.flag = r.popup(this.bar.x, this.bar.y, this.bar.value || "0").insertBefore(this);
+                    },
+      fout = function () {
+          this.flag.animate({opacity: 0}, 300, function () {this.remove();});
+      },
+      pie = r.barchart(10, 10, 500, 300,
+                        [[<%= @pesos_graph %>]], 
+                        {
+                          type : 'soft', 
+                          stacked : true, 
+                        }).hover(fin, fout);
+    }
+</script>
+<br />
 <%= link_to 'New Peso', new_peso_path %>

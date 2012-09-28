@@ -3,6 +3,9 @@ class PesosController < ApplicationController
   # GET /pesos.json
   def index
     @pesos = Peso.all
+    pesos = Array.new
+    @pesos.each{|p| pesos << p.peso.to_i}
+    @pesos_graph = pesos.join ','
 
     respond_to do |format|
       format.html # index.html.erb
