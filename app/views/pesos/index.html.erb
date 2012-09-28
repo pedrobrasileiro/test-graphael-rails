@@ -24,12 +24,12 @@
 <script type="text/javascript">
     window.onload = function () {
       var r = Raphael('graphics'), 
-      fin = function () {
+          fin = function () {
                         this.flag = r.popup(this.bar.x, this.bar.y, this.bar.value || "0").insertBefore(this);
-                    },
-      fout = function () {
-          this.flag.animate({opacity: 0}, 300, function () {this.remove();});
-      },
+                            },
+          fout = function () {
+              this.flag.animate({opacity: 0}, 300, function () {this.remove();});
+          };
       pie = r.barchart(10, 10, 500, 300,
                         [[<%= @pesos_graph %>]], 
                         {
