@@ -2,6 +2,8 @@ test-graphael-rails
 ===================
 
 Testando GRaphael no Rails
+http://g.raphaeljs.com/
+
 
 Como usar (for dummies)
 
